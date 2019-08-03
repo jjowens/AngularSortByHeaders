@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>Angular - Sort By Headers</title>
+
+        <script src="scripts/angular.js"></script>
+
+        <script type="text/javascript">
+            var app = angular.module("myApp", []);
+        </script>
+    </head>
+    <body>
+    <div ng-controller="myBooks">
+        <p>Sort By: {{orderByLabel}}. ReverseSort: {{reverseSort}}</p>   
+        <table>
+            <thead>
+                <tr>
+                    <th><a href="#" ng-click="sortByHeader($event.currentTarget)">Title</a></th>
+                    <th><a href="#" ng-click="sortByHeader($event.currentTarget)" data-orderby="Author.LastName">Author</a></th>
+                    <th><a href="#" ng-click="sortByHeader($event.currentTarget)">Genre</a></th>
+                </tr>
+            </thead>
+            <tr ng-repeat="book in books | orderBy:orderByLabel:reverseSort">
+                <td>{{ book.Title }}</td>
+                <td>{{ book.Author.FirstName }} {{book.Author.LastName}}</td>
+                <td>{{ book.Genre }}</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+    app.controller("myBooks", function ($scope, $http) {
+        // INTIALISE SET UP
+        $scope.orderByLabel = "Author.LastName";
+        $scope.reverseSort = false;
+
+        // GET LIST OF BOOKS
+        $http.get("books.json")
+            .then(function (response) {
+                $scope.books = response.data;
+            });
+
+        $scope.sortByHeader = function sortByHeader(element) {
+            
+            // GET HEADER TEXT
+            var newOrderBy = element.text;
+
+            // SET SORT ORDER
+            var reverseSort = false;
+
+            // CHECK IF HEADER HAS A DATA-ORDERBY ATTRIBUTE
+            if (element.dataset !== undefined) {
+                if (element.dataset.orderby !== undefined) {
+                    newOrderBy = element.dataset.orderby;
+                }
+            }
+
+            // CHECK IF NEW SORT CATEGORY MATCHES UP TO THE CURRENT ONE. IT MEANS IT HAS BEEN CLICKED ON MORE THAN ONCE
+            // IF SO, REVERSE THE SORT ORDER. IF NOT, SET SORT ORDER FROM A TO Z
+            if (newOrderBy === $scope.orderByLabel) {
+                reverseSort = !$scope.reverseSort;
+            } else {
+                reverseSort = false;
+            }
+
+            // UPDATE ORDERBY AND SORT ORDER
+            $scope.orderByLabel = newOrderBy;
+            $scope.reverseSort = reverseSort;
+        }
+
+    });
+
+</script>
+    </body>
+</html>

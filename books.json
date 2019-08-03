@@ -1,0 +1,11 @@
+[
+    {"Title":"IT","Author":{"FirstName":"Stephen","LastName":"King"},"Genre":"Horror"},
+    {"Title":"Christine","Author":{"FirstName":"Stephen","LastName":"King"},"Genre":"Horror"},
+    {"Title":"The Stand","Author":{"FirstName":"Stephen","LastName":"King"},"Genre":"Horror"},
+    {"Title":"Wanderers","Author":{"FirstName":"Chuck","LastName":"Wendig"},"Genre":"Horror"},
+    {"Title":"Hearts of Darkness","Author":{"FirstName":"Joseph","LastName":"Conrad"},"Genre":"Literature"},
+    {"Title":"For Whom the Bell Tolls","Author":{"FirstName":"Ernest","LastName":"Hemingway"},"Genre":"Literature"},
+    {"Title":"The 39 Steps","Author":{"FirstName":"John","LastName":"Buchan"},"Genre":"Thriller"},
+    {"Title":"The Shambling Guide to New York","Author":{"FirstName":"Mur","LastName":"Lafferty"},"Genre":"Fantasy"},
+    {"Title":"Side Jobs","Author":{"FirstName":"Jim","LastName":"Butcher"},"Genre":"Fantasy"},
+    {"Title":"Blackbirds","Author":{"FirstName":"Chuck","LastName":"Wendig"},"Genre":"Fantasy"}]
