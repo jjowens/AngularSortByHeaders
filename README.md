@@ -24,7 +24,7 @@ Books are retrieved from a JSON and is loaded into a table.
 
 ### Initialise Order By and Sort Order
 
-Initialise the order as Author.LastName and reverseSort as false. Setting it as false tells angular to sort the data from A to Z. When data is loaded is sort by Author's LastName and from A to Z.
+Initialise the order as Author.LastName and reverseSort as false. Setting it as false tells angular to sort the data from A to Z. When data is loaded, it will be sorted by author's LastName and from A to Z.
 
  ```javascript
  $scope.orderByLabel = "Author.LastName";
