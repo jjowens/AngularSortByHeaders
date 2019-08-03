@@ -1,7 +1,7 @@
 # AngularSortByHeaders
 
 ## Overview
-A wee script to sort books by header text or by data-sortby attribute.
+A wee script to sort books by header text or by data-orderby attribute.
 
 ## Details
 The data is a JSON file manually created. It contains a small selection of books. Each book record has a title, author name and genre.
